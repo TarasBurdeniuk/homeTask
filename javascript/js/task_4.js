@@ -1,0 +1,1 @@
+let fibanachi = () => {    let number = Number(prompt('Enter a numeric'));    if (!number) {        number = Number(prompt('Enter a numeric', '5'));    }    let result = 0;    for (let i = 0; i <= number; i++) {        result += i;    }    alert(result);};fibanachi();
