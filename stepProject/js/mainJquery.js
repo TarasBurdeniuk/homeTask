@@ -24,18 +24,11 @@ function loadMoreAmazingStart() {
 }
 
 function setMiddleImage() {
-    $('.mini-circle-photo:visible').removeClass('mini-circle-border');
-    let activeImage = $('.mini-circle-photo:visible');
-    $(activeImage).eq(1).addClass('mini-circle-border');
+    $('.mini-circle-photo:visible').removeClass('mini-circle-border').eq(1).addClass('mini-circle-border');
+    let activeImage = $('.mini-circle-border').data('people');
 
-    let people = $(activeImage).eq(1).data('people');
-    let bigPeopleBlock = $('.authors-main-block');
-    $(bigPeopleBlock).hide();
-
-    for (let input of bigPeopleBlock) {
-        if ($(input).data('people') === people) {
-            $(input).show();
-        }
+    for (let input of $('.authors-main-block')) {
+        ($(input).data('people') === activeImage) ? $(input).show() : $(input).hide();
     }
 }
 
@@ -177,7 +170,6 @@ function loadMoreAmazing() {
 
         if (allItemsImage === lastVisIndex) {
             $('.load-more-amazing').hide();
-            console.log('asd');
             $('.amazing-items').addClass('margin-bottom');
         }
     }, 2000);
