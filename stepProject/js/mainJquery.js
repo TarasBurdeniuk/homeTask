@@ -16,7 +16,7 @@ $(document).ready(function () {
 });
 
 function loadMoreAmazingStart() {
-    let j = 12;
+    const j = 12;
     for (let i = 0; i < j; i++) {
         $('.items-image').eq(i).show();
     }
@@ -29,7 +29,7 @@ function showOurServices() {
     $('.li-list').removeClass('active');
     $(this).addClass('active');
 
-    let dataNumber = $(this).data('number');
+    const dataNumber = $(this).data('number');
 
     let servicesMenu = $('.services-menu-content');
     for (let input of servicesMenu) {
@@ -44,7 +44,7 @@ function showOurAmazingWork() {
     $('.load-more-amazing').show();
     $('.amazing-items').removeClass('margin-bottom');
 
-    let liListAmazing = $('.li-amazing');
+    const liListAmazing = $('.li-amazing');
     for (let input of liListAmazing) {
         if ($(input).hasClass('active-amazing')) {
             $(input).removeClass('active-amazing');
@@ -52,8 +52,8 @@ function showOurAmazingWork() {
     }
     $(this).addClass('active-amazing');
 
-    let dataItems = $(this).data('amazingItems');
-    let itemsImage = $('.items-image');
+    const dataItems = $(this).data('amazingItems');
+    const itemsImage = $('.items-image');
 
     for (let input of itemsImage) {
         $(input).hide();
@@ -68,11 +68,11 @@ function showOurAmazingWork() {
 }
 
 function moveLeft() {
-    let currentImage = $('.mini-circle-photo.mini-circle-border');
-    let currentImageIndex = $('.mini-circle-photo.mini-circle-border').index();
-    let prevImageIndex = currentImageIndex - 1;
-    let prevImage = $('.mini-circle-photo').eq(prevImageIndex - 1);
-    let bigPeopleBlock = $('.authors-main-block');
+    const currentImage = $('.mini-circle-photo.mini-circle-border');
+    const currentImageIndex = $('.mini-circle-photo.mini-circle-border').index();
+    const prevImageIndex = currentImageIndex - 1;
+    const prevImage = $('.mini-circle-photo').eq(prevImageIndex - 1);
+    const bigPeopleBlock = $('.authors-main-block');
     $(bigPeopleBlock).hide();
 
     if ((currentImageIndex) === ($('.mini-circle-photo:first').index())) {
@@ -96,11 +96,11 @@ function moveLeft() {
 }
 
 function moveRight() {
-    let currentImage = $('.mini-circle-photo.mini-circle-border');
-    let currentImageIndex = $('.mini-circle-photo.mini-circle-border').index();
-    let nextImageIndex = currentImageIndex;
-    let nextImage = $('.mini-circle-photo').eq(nextImageIndex);
-    let bigPeopleBlock = $('.authors-main-block');
+    const currentImage = $('.mini-circle-photo.mini-circle-border');
+    const currentImageIndex = $('.mini-circle-photo.mini-circle-border').index();
+    const nextImageIndex = currentImageIndex;
+    const nextImage = $('.mini-circle-photo').eq(nextImageIndex);
+    const bigPeopleBlock = $('.authors-main-block');
     $(bigPeopleBlock).hide();
 
     if (currentImageIndex === ($('.mini-circle-photo:visible:last').index())) {
@@ -122,8 +122,8 @@ function moveRight() {
 }
 
 function showPeople() {
-    let people = $(this).data('people');
-    let bigPeopleBlock = $('.authors-main-block');
+    const people = $(this).data('people');
+    const bigPeopleBlock = $('.authors-main-block');
     $(bigPeopleBlock).hide();
 
     for (let input of bigPeopleBlock) {
@@ -139,12 +139,17 @@ function showPeople() {
 function loadMoreAmazing() {
     let lastVisIndex = $('.items-image:visible:last').index();
     let j = 12;
-    let allItemsImage = $('.items-image:last').index();
+    const allItemsImage = $('.items-image:last').index();
+    const hiddenElem = $('.items-image:hidden');
 
     if ((lastVisIndex + 1) === 12) {
         j = 24;
     } else if ((lastVisIndex + 1) === 24) {
         j = 36;
+    }
+    const num = 12;
+    if (hiddenElem.length % num) {
+        return;
     }
     $('.loader-image').show();
     $('.load-more-amazing').hide();
@@ -165,8 +170,8 @@ function loadMoreAmazing() {
 }
 
 function loadMore() {
-    let hiddenImage = Array.from($('.hide-best-image'));
-    let j = 5;
+    const hiddenImage = $('.hide-best-image');
+    const j = 5;
 
     if (hiddenImage.length < 1) {
         return;
