@@ -35,7 +35,7 @@ function showOurServices() {
     for (let input of servicesMenu) {
         $(input).hide(500);
         if ($(input).data('number') === dataNumber) {
-            $(input).show(500);
+            $(input).show();
         }
     }
 }
@@ -53,37 +53,47 @@ function showOurAmazingWork() {
     $(this).addClass('active-amazing');
 
     const dataItems = $(this).data('amazingItems');
-    const itemsImage = $('.items-image');
+    const itemsImage = Array.from($('.items-image'));
+    const showItems = 12;
+    const dataItemsImage = itemsImage.filter((value) => {
+        return value.getAttribute('data-amazing-items') === dataItems;
+    });
+    $(itemsImage).hide();
+    const hideButtonAddClass = () => {
+        $('.load-more-amazing').hide();
+        $('.amazing-items').addClass('margin-bottom');
+    };
 
-    for (let input of itemsImage) {
-        $(input).hide();
-        if ($(input).data('amazingItems') === dataItems) {
-            $(input).fadeIn(700);
-        } else if (dataItems === 'all') {
-            $(input).fadeIn(700);
-            $('.load-more-amazing').hide();
-            $('.amazing-items').addClass('margin-bottom');
+    if (dataItemsImage.length > showItems) {
+        for (let i = 0; i < showItems; i++) {
+            $(dataItemsImage).eq(i).fadeIn(700);
         }
+        $('.load-more-amazing').show();
+    } else if (dataItems === 'all') {
+        $(itemsImage).fadeIn(700);
+        hideButtonAddClass();
+    } else {
+        $(dataItemsImage).fadeIn(700);
+        hideButtonAddClass();
     }
 }
 
 function moveLeft() {
     const currentImage = $('.mini-circle-photo.mini-circle-border');
-    const currentImageIndex = $('.mini-circle-photo.mini-circle-border').index();
+    const currentImageIndex = currentImage.index();
     const prevImageIndex = currentImageIndex - 1;
-    const prevImage = $('.mini-circle-photo').eq(prevImageIndex - 1);
+    let prevImage = $('.mini-circle-photo').eq(prevImageIndex);
     const bigPeopleBlock = $('.authors-main-block');
     $(bigPeopleBlock).hide();
 
+    if (currentImageIndex === ($('.mini-circle-photo:visible:first').index())) {
+        $('.mini-circle-photo').eq(prevImageIndex).show();
+        $('.mini-circle-photo').eq(currentImageIndex + 3).hide();
+    }
     if ((currentImageIndex) === ($('.mini-circle-photo:first').index())) {
         $('.mini-circle-photo:hidden').show();
-        $('.mini-circle-photo:last').addClass('mini-circle-border');
-        $('.mini-circle-photo').eq(prevImageIndex).hide();
-        $('.mini-circle-photo').eq(currentImageIndex).hide();
-    }
-    if (prevImageIndex === ($('.mini-circle-photo:visible:first').index() - 1)) {
-        $('.mini-circle-photo').eq(prevImageIndex - 1).addClass('mini-circle-border').show();
-        $('.mini-circle-photo').eq(prevImageIndex + 2).hide();
+        prevImage = $('.mini-circle-photo:last');
+        currentImage.hide();
     }
 
     currentImage.removeClass('mini-circle-border');
@@ -97,21 +107,22 @@ function moveLeft() {
 
 function moveRight() {
     const currentImage = $('.mini-circle-photo.mini-circle-border');
-    const currentImageIndex = $('.mini-circle-photo.mini-circle-border').index();
-    const nextImageIndex = currentImageIndex;
-    const nextImage = $('.mini-circle-photo').eq(nextImageIndex);
+    const currentImageIndex = currentImage.index();
+    let nextImageIndex = currentImageIndex + 1;
+    let nextImage = $('.mini-circle-photo').eq(nextImageIndex);
     const bigPeopleBlock = $('.authors-main-block');
-    $(bigPeopleBlock).hide();
 
+    $(bigPeopleBlock).hide();
     if (currentImageIndex === ($('.mini-circle-photo:visible:last').index())) {
-        $('.mini-circle-photo').eq(currentImageIndex).show().addClass('mini-circle-border');
+        $('.mini-circle-photo').eq(nextImageIndex).show();
         $('.mini-circle-photo').eq(currentImageIndex - 3).hide();
     }
-    if ((nextImageIndex + 1) === ($('.mini-circle-photo:last').index() + 1)) {
+    if ((currentImageIndex) === ($('.mini-circle-photo:last').index())) {
         $('.mini-circle-photo:hidden').show();
-        $('.mini-circle-photo').eq(0).addClass('mini-circle-border');
-        $('.hide-authors-mini').hide();
+        nextImage = $('.mini-circle-photo').eq(0);
+        currentImage.hide();
     }
+
     currentImage.removeClass('mini-circle-border');
     nextImage.addClass('mini-circle-border');
     for (let input of bigPeopleBlock) {
@@ -138,30 +149,34 @@ function showPeople() {
 
 function loadMoreAmazing() {
     let lastVisIndex = $('.items-image:visible:last').index();
-    let j = 12;
     const allItemsImage = $('.items-image:last').index();
     const hiddenElem = $('.items-image:hidden');
+    const dataAmazingItems = $('.active-amazing').data('amazingItems');
+    console.log(dataAmazingItems);
+    const allElemDataItems = Array.from($('.items-image').filter(function () {
+        return $(this).data('amazingItems') === dataAmazingItems;
+    }));
+    const showItems = 12;
 
-    if ((lastVisIndex + 1) === 12) {
-        j = 24;
-    } else if ((lastVisIndex + 1) === 24) {
-        j = 36;
-    }
-    const num = 12;
-    if (hiddenElem.length % num) {
-        return;
-    }
     $('.loader-image').show();
     $('.load-more-amazing').hide();
 
     setTimeout(function () {
         $('.loader-image').hide();
         $('.load-more-amazing').show();
-        for (let i = 0; i < j; i++) {
-            $('.items-image').eq(i).show();
+
+        if (dataAmazingItems === 'all') {
+            for (let i = 0; i < showItems; i++) {
+                $(hiddenElem).eq(i).fadeIn(700);
+            }
+        } else {
+            for (let i = showItems; i <= allElemDataItems.length - 1; i++) {
+                $(allElemDataItems).eq(i).fadeIn(700);
+            }
+            $('.load-more-amazing').hide();
+            $('.amazing-items').addClass('margin-bottom');
         }
         lastVisIndex = $('.items-image:visible:last').index();
-
         if (allItemsImage === lastVisIndex) {
             $('.load-more-amazing').hide();
             $('.amazing-items').addClass('margin-bottom');

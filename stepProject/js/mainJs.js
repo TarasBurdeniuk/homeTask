@@ -24,7 +24,7 @@ const applyHiddenClass = (cls, length = cls.length, count = 0) => {
 applyHiddenClass(hideAuthors);
 applyHiddenClass(hideAuthorsMini);
 applyHiddenClass(loader);
-applyHiddenClass(itemsImage, 36, 12);
+applyHiddenClass(itemsImage, itemsImage.length, 12);
 applyHiddenClass(hideBestImage);
 applyHiddenClass(show);
 
@@ -33,7 +33,8 @@ window.addEventListener('load', () => {
         columnWidth: '.grid-sizer',
         itemSelector: '.grid-item',
         percentPosition: true,
-        gutter: '.gutter-sizer'
+        gutter: '.gutter-sizer',
+        horizontalOrder: true
     });
 });
 
@@ -61,6 +62,7 @@ function showOurAmazingWork() {
     const buttonLoadMore = document.getElementsByClassName('load-more-amazing');
     buttonLoadMore[0].style.display = '';
     const amazingItems = Array.from(document.getElementsByClassName('amazing-items'));
+    const showItems = 12;
     amazingItems.forEach((value) => value.classList.remove('margin-bottom'));
 
     liAmazing.forEach((value) => value.classList.remove('active-amazing'));
@@ -72,11 +74,21 @@ function showOurAmazingWork() {
     const dataItemsImage = itemsImage.filter((items) => {
         return items.getAttribute('data-amazing-items') === dataAmazingItems;
     });
-    dataItemsImage.forEach((value) => value.style.display = '');
-    if (dataAmazingItems === 'all') {
-        itemsImage.forEach((value) => value.style.display = '');
+    const hideButtonAddClass = () => {
         buttonLoadMore[0].style.display = 'none';
         amazingItems[0].classList.add('margin-bottom');
+    };
+    if (dataItemsImage.length > showItems) {
+        for (let i = 0; i < showItems; i++) {
+            dataItemsImage[i].style.display = '';
+        }
+        buttonLoadMore[0].style.display = '';
+    } else if (dataAmazingItems === 'all') {
+        itemsImage.forEach((value) => value.style.display = '');
+        hideButtonAddClass();
+    } else {
+        dataItemsImage.forEach((value) => value.style.display = '');
+        hideButtonAddClass();
     }
 }
 
@@ -94,45 +106,56 @@ function showPeople() {
 }
 
 const loadingMoreAmazing = () => {
+    const itemsImage = Array.from(document.getElementsByClassName('items-image'));
     const buttonLoadMore = document.getElementsByClassName('load-more-amazing');
     const amazingItems = document.getElementsByClassName('amazing-items');
     const hiddenElem = itemsImage.filter((value) => {
         return value.style.display === 'none';
     });
     const loader = document.getElementsByClassName('loader-image');
-    const number = 12;
-    if (hiddenElem.length % number) {
-        return;
-    }
+    const showItems = 12;
+    const dataAmazingItems = document.getElementsByClassName('active-amazing')[0].getAttribute('data-amazing-items');
+    const allElemDataItems = itemsImage.filter((items) => {
+        return items.getAttribute('data-amazing-items') === dataAmazingItems;
+    });
+
     buttonLoadMore[0].style.display = 'none';
     loader[0].style.display = '';
     setTimeout(function () {
         buttonLoadMore[0].style.display = '';
         loader[0].style.display = 'none';
-        if (hiddenElem.length === number) {
+        if (hiddenElem.length === showItems) {
             buttonLoadMore[0].style.display = 'none';
             amazingItems[0].classList.add('margin-bottom');
         }
-        for (let i = 0; i < number; i++) {
-            hiddenElem[i].style.display = '';
+        if (dataAmazingItems === 'all') {
+            for (let i = 0; i < showItems; i++) {
+                hiddenElem[i].style.display = '';
+            }
+        } else {
+            for (let i = showItems; i <= allElemDataItems.length - 1; i++) {
+                allElemDataItems[i].style.display = '';
+            }
+            buttonLoadMore[0].style.display = 'none';
+            amazingItems[0].classList.add('margin-bottom');
         }
     }, 2000);
 };
 
 const loadMore = () => {
-    const hiddenImage = Array.from(document.getElementsByClassName('hide-best-image'));
+    let hiddenImage = Array.from(document.getElementsByClassName('hide-best-image'));
     const loader = document.getElementsByClassName('loader');
     const loadMoreHide = document.getElementsByClassName('load-more-hide');
-    const showNextPhoto = 5;
-    if (hiddenImage.length < 1) {
-        return;
-    }
+    const showNextPhoto = (hiddenImage.length < 5) ? hiddenImage.length : 5;
+    const gridMarginBottom = document.getElementsByClassName('grid');
+
     loadMoreHide[0].style.display = 'none';
     loader[1].style.display = '';
 
     setTimeout(function () {
         loadMoreHide[0].style.display = '';
         loader[1].style.display = 'none';
+
         for (let i = 0; i < showNextPhoto; i++) {
             hiddenImage[i].classList.remove('hide-best-image');
             hiddenImage[i].style.display = '';
@@ -141,8 +164,14 @@ const loadMore = () => {
             columnWidth: '.grid-sizer',
             itemSelector: '.grid-item',
             percentPosition: true,
-            gutter: '.gutter-sizer'
-        });
+            gutter: '.gutter-sizer',
+            horizontalOrder: true
+    });
+        hiddenImage = Array.from(document.getElementsByClassName('hide-best-image'));
+        if (hiddenImage.length < 1) {
+            loadMoreHide[0].style.display = 'none';
+            gridMarginBottom[0].classList.add('grid-margin-bottom');
+        }
     }, 2000);
 };
 
@@ -161,11 +190,10 @@ const moveLeft = () => {
         prevImage = miniImages[miniImages.length - 1];
         prevImageIndex = miniImages.length - 1;
         currentImage[currentImageIndex].style.display = 'none';
-        miniImages[currentImageIndex + 1].style.display = 'none';
     }
     if (prevImage.style.display === 'none') {
         prevImage.style.display = '';
-        miniImages[currentImageIndex + 2].style.display = 'none';
+        miniImages[currentImageIndex + 3].style.display = 'none';
     }
     currentImage[0].classList.remove('mini-circle-border');
     prevImage.classList.add('mini-circle-border');
@@ -184,14 +212,13 @@ const moveRight = () => {
 
     if (currentImageIndex === (miniImages.length - 1)) {
         miniImages.forEach((items) => items.style.display = '');
-        nextImage = miniImages[miniImages.length - miniImages.length];
-        nextImageIndex = miniImages.length - miniImages.length;
+        nextImage = miniImages[0];
+        nextImageIndex = 0;
         currentImage[0].style.display = 'none';
-        miniImages[currentImageIndex - 1].style.display = 'none';
     }
     if (nextImage.style.display === 'none') {
         nextImage.style.display = '';
-        miniImages[currentImageIndex - 2].style.display = 'none';
+        miniImages[currentImageIndex - 3].style.display = 'none';
     }
     currentImage[0].classList.remove('mini-circle-border');
     nextImage.classList.add('mini-circle-border');

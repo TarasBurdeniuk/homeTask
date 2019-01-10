@@ -15,7 +15,7 @@
 
 <header class="head-menu">
     <div class="top-side-fon">
-        <div class="logo-ham">
+        <div class="menu-head-ham">
             <a href="#">
                 <div class="image-h">
                     <p class="big-h">h</p>
@@ -45,8 +45,8 @@
         <p class="create">we are create</p>
         <p class="buy-theme">Just Buy And Enjoy These Awesome Features</p>
         <div class="button-top">
-            <button class="explore">explore now</button>
-            <button class="purchase">purchase now</button>
+            <button class="main-button button-header-green">explore now</button>
+            <button class="main-button button-header-blue">purchase now</button>
         </div>
     </div>
 </header>
@@ -55,19 +55,19 @@
 
 <div class="menu-big-button">
     <div class="big-button">
-        <img src="image/icons/onclick.png" alt="#">
+        <div class="div-image onclick"></div>
         <p class="onclick-menu-odd">different theme option</p>
     </div>
     <div class="big-button">
-        <img src="image/icons/diamond.png" alt="#">
+        <div class="div-image diamond"></div>
         <p class="onclick-menu">fully customizable</p>
     </div>
     <div class="big-button">
-        <img src="image/icons/lamp.png" alt="#">
+        <div class="div-image lamp"></div>
         <p class="onclick-menu-odd">unlimited support</p>
     </div>
     <div class="big-button">
-        <img src="image/icons/device.png" alt="#">
+        <div class="div-image device"></div>
         <p class="onclick-menu">responsive all device</p>
     </div>
 </div>
@@ -86,38 +86,38 @@
             <li class="li-list" data-number="5">Seo Service</li>
         </menu>
         <div class="services-menu-content" data-number="0">
-            <img class="image-service" src="image/web%20design/web-design1.jpg" alt="#">
+            <img class="image-service" src="image/web%20design/web-design1.jpg" alt="web-design">
             <p class="content">The native methods are probably faster, but as they are not really comparable to jQuery's
                 data() it doesn't really matter, but for getting the data attribute I would think the fastest method
                 with the best browser support would be</p>
         </div>
         <div class="services-menu-content show" data-number="1">
-            <img class="image-service" src="image/web%20design/web-design2.jpg" alt="#">
+            <img class="image-service" src="image/web%20design/web-design2.jpg" alt="graphic-design">
             <p class="content">Any guidance on understanding the difference between the two would be appreciated. While
                 I am looking at performance specifically if there are other reasons to use one over the other I would
                 like to know this as well.</p>
         </div>
         <div class="services-menu-content show" data-number="2">
-            <img class="image-service" src="image/web%20design/web-design3.jpg" alt="#">
+            <img class="image-service" src="image/web%20design/web-design3.jpg" alt="online-support">
             <p class="content">A Boolean indicating whether to place the animation in the effects queue. If false, the
                 animation will begin immediately. As of jQuery 1.7, the queue option can also accept a string, in which
                 case the animation is added to the queue represented by that string. When a custom queue name is used
                 the animation does not automatically start; you must call</p>
         </div>
         <div class="services-menu-content show" data-number="3">
-            <img class="image-service" src="image/web%20design/web-design4.jpg" alt="#">
+            <img class="image-service" src="image/web%20design/web-design4.jpg" alt="app-design">
             <p class="content">A function to be called for each animated property of each animated element. This
                 function provides an opportunity to modify the Tween object to change the value of the property before
                 it is set.</p>
         </div>
         <div class="services-menu-content show" data-number="4">
-            <img class="image-service" src="image/web%20design/web-design5.jpg" alt="#">
+            <img class="image-service" src="image/web%20design/web-design5.jpg" alt="online-marketing">
             <p class="content">If you only want the effect/transition to happen when the modal window appears, but not
                 when it disappears, just add the transition to the “.md-show.md-effect-x .md-content” declaration (like
                 we did for some of the examples).</p>
         </div>
         <div class="services-menu-content show" data-number="5">
-            <img class="image-service" src="image/web%20design/web-design6.jpg" alt="#">
+            <img class="image-service" src="image/web%20design/web-design6.jpg" alt="seo-service">
             <p class="content">To experiment with new effects, add a new button and a new modal with an effect class and
                 an ID, referencing to that ID in the button’s data-attribute “data-modal”. Then you can add another set
                 of styles for that specific effect.</p>
@@ -128,12 +128,10 @@
 <!--Section EVERYTHING IS READY-->
 
 <div class="section-is-ready">
-    <div class="ready-background">
-        <p class="main-text-section-ready">everything is ready. just buy and install now</p>
-        <p class="second-text-section-ready">Smooth reliable, responsive ready, perfect portfolio, unique blog layout
-            and many many options for you</p>
-        <button class="purchase-button-section-ready">purchase now</button>
-    </div>
+    <p class="main-text-section-ready">everything is ready. just buy and install now</p>
+    <p class="second-text-section-ready">Smooth reliable, responsive ready, perfect portfolio, unique blog layout
+        and many many options for you</p>
+    <button class="main-button button-is-ready">purchase now</button>
 </div>
 
 <!--Section Our Amazing Work-->
@@ -145,13 +143,13 @@
             <li class="li-amazing active-amazing" data-amazing-items="all">All</li>
             <li class="li-amazing" data-amazing-items="graphic">Graphic Design</li>
             <li class="li-amazing" data-amazing-items="webDesign">Web Design</li>
-            <li class="li-amazing" data-amazing-items="loadingPages">Landing Pages</li>
+            <li class="li-amazing" data-amazing-items="landingPages">Landing Pages</li>
             <li class="li-amazing" data-amazing-items="wordpress">Wordpress</li>
         </menu>
     </div>
     <div class="amazing-items">
         <div class="items-image" data-amazing-items="graphic">
-            <img class="image-amazing" src="image/graphic design/graphic-design1.jpg" alt="#">
+            <img class="image-amazing" src="image/graphic design/graphic-design1.jpg" alt="graphic-design">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -170,7 +168,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="graphic">
-            <img class="image-amazing" src="image/graphic design/graphic-design2.jpg" alt="#">
+            <img class="image-amazing" src="image/graphic design/graphic-design2.jpg" alt="graphic-design">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -189,7 +187,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="graphic">
-            <img class="image-amazing" src="image/graphic design/graphic-design3.jpg" alt="#">
+            <img class="image-amazing" src="image/graphic design/graphic-design3.jpg" alt="graphic-design">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -208,7 +206,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="graphic">
-            <img class="image-amazing" src="image/graphic design/graphic-design4.jpg" alt="#">
+            <img class="image-amazing" src="image/graphic design/graphic-design4.jpg" alt="graphic-design">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -227,7 +225,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="graphic">
-            <img class="image-amazing" src="image/graphic design/graphic-design5.jpg" alt="#">
+            <img class="image-amazing" src="image/graphic design/graphic-design5.jpg" alt="graphic-design">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -246,7 +244,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="graphic">
-            <img class="image-amazing" src="image/graphic design/graphic-design6.jpg" alt="#">
+            <img class="image-amazing" src="image/graphic design/graphic-design6.jpg" alt="graphic-design">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -265,7 +263,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="graphic">
-            <img class="image-amazing" src="image/graphic design/graphic-design7.jpg" alt="#">
+            <img class="image-amazing" src="image/graphic design/graphic-design7.jpg" alt="graphic-design">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -284,7 +282,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="graphic">
-            <img class="image-amazing" src="image/graphic design/graphic-design8.jpg" alt="#">
+            <img class="image-amazing" src="image/graphic design/graphic-design8.jpg" alt="graphic-design">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -303,7 +301,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="graphic">
-            <img class="image-amazing" src="image/graphic design/graphic-design9.jpg" alt="#">
+            <img class="image-amazing" src="image/graphic design/graphic-design9.jpg" alt="graphic-design">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -322,7 +320,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="graphic">
-            <img class="image-amazing" src="image/graphic design/graphic-design10.jpg" alt="#">
+            <img class="image-amazing" src="image/graphic design/graphic-design10.jpg" alt="graphic-design">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -341,7 +339,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="graphic">
-            <img class="image-amazing" src="image/graphic design/graphic-design11.jpg" alt="#">
+            <img class="image-amazing" src="image/graphic design/graphic-design11.jpg" alt="graphic-design">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -360,7 +358,45 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="graphic">
-            <img class="image-amazing" src="image/graphic design/graphic-design12.jpg" alt="#">
+            <img class="image-amazing" src="image/graphic design/graphic-design12.jpg" alt="graphic-design">
+            <div class="hover-amazing-items">
+                <div class="search-link">
+                    <a href="#">
+                        <div class="circle link">
+                            <i class="fas fa-link fa-link-circle"></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="circle search">
+                            <i class="fa fa-search fa-search-circle"></i>
+                        </div>
+                    </a>
+                </div>
+                <p class="hover-creative-design">creative design</p>
+                <p class="hover-web-design">Graphic Design</p>
+            </div>
+        </div>
+        <div class="items-image" data-amazing-items="graphic">
+            <img class="image-amazing" src="image/graphic design/graphic-design1.jpg" alt="graphic-design">
+            <div class="hover-amazing-items">
+                <div class="search-link">
+                    <a href="#">
+                        <div class="circle link">
+                            <i class="fas fa-link fa-link-circle"></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="circle search">
+                            <i class="fa fa-search fa-search-circle"></i>
+                        </div>
+                    </a>
+                </div>
+                <p class="hover-creative-design">creative design</p>
+                <p class="hover-web-design">Graphic Design</p>
+            </div>
+        </div>
+        <div class="items-image" data-amazing-items="graphic">
+            <img class="image-amazing" src="image/graphic design/graphic-design2.jpg" alt="graphic-design">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -379,7 +415,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="webDesign">
-            <img class="image-amazing" src="image/web%20design/web-design1.jpg" alt="#">
+            <img class="image-amazing" src="image/web%20design/web-design1.jpg" alt="webDesign">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -398,7 +434,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="webDesign">
-            <img class="image-amazing" src="image/web%20design/web-design2.jpg" alt="#">
+            <img class="image-amazing" src="image/web%20design/web-design2.jpg" alt="webDesign">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -417,7 +453,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="webDesign">
-            <img class="image-amazing" src="image/web%20design/web-design3.jpg" alt="#">
+            <img class="image-amazing" src="image/web%20design/web-design3.jpg" alt="webDesign">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -436,7 +472,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="webDesign">
-            <img class="image-amazing" src="image/web%20design/web-design4.jpg" alt="#">
+            <img class="image-amazing" src="image/web%20design/web-design4.jpg" alt="webDesign">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -455,7 +491,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="webDesign">
-            <img class="image-amazing" src="image/web%20design/web-design5.jpg" alt="#">
+            <img class="image-amazing" src="image/web%20design/web-design5.jpg" alt="webDesign">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -474,7 +510,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="webDesign">
-            <img class="image-amazing" src="image/web%20design/web-design6.jpg" alt="#">
+            <img class="image-amazing" src="image/web%20design/web-design6.jpg" alt="webDesign">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -493,7 +529,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="webDesign">
-            <img class="image-amazing" src="image/web%20design/web-design7.jpg" alt="#">
+            <img class="image-amazing" src="image/web%20design/web-design7.jpg" alt="webDesign">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -511,8 +547,8 @@
                 <p class="hover-web-design">Web Design</p>
             </div>
         </div>
-        <div class="items-image" data-amazing-items="loadingPages">
-            <img class="image-amazing" src="image/landing%20page/landing-page1.jpg" alt="#">
+        <div class="items-image" data-amazing-items="landingPages">
+            <img class="image-amazing" src="image/landing%20page/landing-page1.jpg" alt="landingPages">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -530,8 +566,8 @@
                 <p class="hover-web-design">Landing Pages</p>
             </div>
         </div>
-        <div class="items-image" data-amazing-items="loadingPages">
-            <img class="image-amazing" src="image/landing%20page/landing-page2.jpg" alt="#">
+        <div class="items-image" data-amazing-items="landingPages">
+            <img class="image-amazing" src="image/landing%20page/landing-page2.jpg" alt="landingPages">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -549,8 +585,8 @@
                 <p class="hover-web-design">Landing Pages</p>
             </div>
         </div>
-        <div class="items-image" data-amazing-items="loadingPages">
-            <img class="image-amazing" src="image/landing%20page/landing-page3.jpg" alt="#">
+        <div class="items-image" data-amazing-items="landingPages">
+            <img class="image-amazing" src="image/landing%20page/landing-page3.jpg" alt="landingPages">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -568,8 +604,8 @@
                 <p class="hover-web-design">Landing Pages</p>
             </div>
         </div>
-        <div class="items-image" data-amazing-items="loadingPages">
-            <img class="image-amazing" src="image/landing%20page/landing-page4.jpg" alt="#">
+        <div class="items-image" data-amazing-items="landingPages">
+            <img class="image-amazing" src="image/landing%20page/landing-page4.jpg" alt="landingPages">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -587,8 +623,8 @@
                 <p class="hover-web-design">Landing Pages</p>
             </div>
         </div>
-        <div class="items-image" data-amazing-items="loadingPages">
-            <img class="image-amazing" src="image/landing%20page/landing-page5.jpg" alt="#">
+        <div class="items-image" data-amazing-items="landingPages">
+            <img class="image-amazing" src="image/landing%20page/landing-page5.jpg" alt="landingPages">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -606,8 +642,8 @@
                 <p class="hover-web-design">Landing Pages</p>
             </div>
         </div>
-        <div class="items-image" data-amazing-items="loadingPages">
-            <img class="image-amazing" src="image/landing%20page/landing-page6.jpg" alt="#">
+        <div class="items-image" data-amazing-items="landingPages">
+            <img class="image-amazing" src="image/landing%20page/landing-page6.jpg" alt="landingPages">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -625,8 +661,8 @@
                 <p class="hover-web-design">Landing Pages</p>
             </div>
         </div>
-        <div class="items-image" data-amazing-items="loadingPages">
-            <img class="image-amazing" src="image/landing%20page/landing-page7.jpg" alt="#">
+        <div class="items-image" data-amazing-items="landingPages">
+            <img class="image-amazing" src="image/landing%20page/landing-page7.jpg" alt="landingPages">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -645,7 +681,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="wordpress">
-            <img class="image-amazing" src="image/wordpress/wordpress1.jpg" alt="#">
+            <img class="image-amazing" src="image/wordpress/wordpress1.jpg" alt="wordpress">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -664,7 +700,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="wordpress">
-            <img class="image-amazing" src="image/wordpress/wordpress2.jpg" alt="#">
+            <img class="image-amazing" src="image/wordpress/wordpress2.jpg" alt="wordpress">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -683,7 +719,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="wordpress">
-            <img class="image-amazing" src="image/wordpress/wordpress3.jpg" alt="#">
+            <img class="image-amazing" src="image/wordpress/wordpress3.jpg" alt="wordpress">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -702,7 +738,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="wordpress">
-            <img class="image-amazing" src="image/wordpress/wordpress4.jpg" alt="#">
+            <img class="image-amazing" src="image/wordpress/wordpress4.jpg" alt="wordpress">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -721,7 +757,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="wordpress">
-            <img class="image-amazing" src="image/wordpress/wordpress5.jpg" alt="#">
+            <img class="image-amazing" src="image/wordpress/wordpress5.jpg" alt="wordpress">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -740,7 +776,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="wordpress">
-            <img class="image-amazing" src="image/wordpress/wordpress6.jpg" alt="#">
+            <img class="image-amazing" src="image/wordpress/wordpress6.jpg" alt="wordpress">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -759,7 +795,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="wordpress">
-            <img class="image-amazing" src="image/wordpress/wordpress7.jpg" alt="#">
+            <img class="image-amazing" src="image/wordpress/wordpress7.jpg" alt="wordpress">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -778,45 +814,7 @@
             </div>
         </div>
         <div class="items-image" data-amazing-items="wordpress">
-            <img class="image-amazing" src="image/wordpress/wordpress8.jpg" alt="#">
-            <div class="hover-amazing-items">
-                <div class="search-link">
-                    <a href="#">
-                        <div class="circle link">
-                            <i class="fas fa-link fa-link-circle"></i>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="circle search">
-                            <i class="fa fa-search fa-search-circle"></i>
-                        </div>
-                    </a>
-                </div>
-                <p class="hover-creative-design">creative design</p>
-                <p class="hover-web-design">Wordpress</p>
-            </div>
-        </div>
-        <div class="items-image" data-amazing-items="wordpress">
-            <img class="image-amazing" src="image/wordpress/wordpress9.jpg" alt="#">
-            <div class="hover-amazing-items">
-                <div class="search-link">
-                    <a href="#">
-                        <div class="circle link">
-                            <i class="fas fa-link fa-link-circle"></i>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="circle search">
-                            <i class="fa fa-search fa-search-circle"></i>
-                        </div>
-                    </a>
-                </div>
-                <p class="hover-creative-design">creative design</p>
-                <p class="hover-web-design">Wordpress</p>
-            </div>
-        </div>
-        <div class="items-image" data-amazing-items="wordpress">
-            <img class="image-amazing" src="image/wordpress/wordpress10.jpg" alt="#">
+            <img class="image-amazing" src="image/wordpress/wordpress8.jpg" alt="wordpress">
             <div class="hover-amazing-items">
                 <div class="search-link">
                     <a href="#">
@@ -846,8 +844,8 @@
 <div class="breaking-news">
     <h2 class="services breaking-news-lines">Breaking News</h2>
     <div class="section-image-news">
-        <div class="image-news">
-            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="#">
+        <a class="image-news">
+            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="breaking-news">
             <div class="bottom-breaking-news">
                 <span class="news-title">Amazing Image Post</span>
                 <span class="link-section-note vertical-line">By Admin</span>
@@ -857,9 +855,9 @@
                 <span class="top-right-section-date">12</span>
                 <span class="top-right-section-date">Feb</span>
             </div>
-        </div>
-        <div class="image-news">
-            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="#">
+        </a>
+        <a class="image-news">
+            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="breaking-news">
             <div class="bottom-breaking-news">
                 <span class="news-title">Amazing Image Post</span>
                 <span class="link-section-note vertical-line">By Admin</span>
@@ -869,9 +867,9 @@
                 <span class="top-right-section-date">12</span>
                 <span class="top-right-section-date">Feb</span>
             </div>
-        </div>
-        <div class="image-news">
-            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="#">
+        </a>
+        <a class="image-news">
+            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="breaking-news">
             <div class="bottom-breaking-news">
                 <span class="news-title">Amazing Image Post</span>
                 <span class="link-section-note vertical-line">By Admin</span>
@@ -881,9 +879,9 @@
                 <span class="top-right-section-date">12</span>
                 <span class="top-right-section-date">Feb</span>
             </div>
-        </div>
-        <div class="image-news">
-            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="#">
+        </a>
+        <a class="image-news">
+            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="breaking-news">
             <div class="bottom-breaking-news">
                 <span class="news-title">Amazing Image Post</span>
                 <span class="link-section-note vertical-line">By Admin</span>
@@ -893,9 +891,9 @@
                 <span class="top-right-section-date">12</span>
                 <span class="top-right-section-date">Feb</span>
             </div>
-        </div>
-        <div class="image-news">
-            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="#">
+        </a>
+        <a class="image-news">
+            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="breaking-news">
             <div class="bottom-breaking-news">
                 <span class="news-title">Amazing Image Post</span>
                 <span class="link-section-note vertical-line">By Admin</span>
@@ -905,9 +903,9 @@
                 <span class="top-right-section-date">12</span>
                 <span class="top-right-section-date">Feb</span>
             </div>
-        </div>
-        <div class="image-news">
-            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="#">
+        </a>
+        <a class="image-news">
+            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="breaking-news">
             <div class="bottom-breaking-news">
                 <span class="news-title">Amazing Image Post</span>
                 <span class="link-section-note vertical-line">By Admin</span>
@@ -917,9 +915,9 @@
                 <span class="top-right-section-date">12</span>
                 <span class="top-right-section-date">Feb</span>
             </div>
-        </div>
-        <div class="image-news">
-            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="#">
+        </a>
+        <a class="image-news">
+            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="breaking-news">
             <div class="bottom-breaking-news">
                 <span class="news-title">Amazing Image Post</span>
                 <span class="link-section-note vertical-line">By Admin</span>
@@ -929,9 +927,9 @@
                 <span class="top-right-section-date">12</span>
                 <span class="top-right-section-date">Feb</span>
             </div>
-        </div>
-        <div class="image-news">
-            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="#">
+        </a>
+        <a class="image-news">
+            <img class="image-breaking-news" src="image/web%20design/web-design1.jpg" alt="breaking-news">
             <div class="bottom-breaking-news">
                 <span class="news-title">Amazing Image Post</span>
                 <span class="link-section-note vertical-line">By Admin</span>
@@ -941,7 +939,7 @@
                 <span class="top-right-section-date">12</span>
                 <span class="top-right-section-date">Feb</span>
             </div>
-        </div>
+        </a>
     </div>
 </div>
 
@@ -957,7 +955,7 @@
                 <p class="name-author">Nil Armstrong</p>
                 <p class="position-author">Spaceman</p>
                 <div class="image-block-author">
-                    <img class="image-author" src="image/authors/nil_armstrong.jpg" alt="#">
+                    <img class="image-author" src="image/authors/nil_armstrong.jpg" alt="nil_armstrong">
                 </div>
             </div>
             <div class="authors-main-block hide-authors" data-people="jackie-chan">
@@ -965,7 +963,7 @@
                 <p class="name-author">Jackie Chan</p>
                 <p class="position-author">Actor</p>
                 <div class="image-block-author">
-                    <img class="image-author" src="image/authors/jackie-chan.jpg" alt="#">
+                    <img class="image-author" src="image/authors/jackie-chan.jpg" alt="jackie-chan">
                 </div>
             </div>
             <div class="authors-main-block hide-authors" data-people="master-yoda">
@@ -974,7 +972,7 @@
                 <p class="position-author">Grand Jedi</p>
                 <div class="border-circle">
                     <div class="image-block-author">
-                        <img class="image-author" src="image/authors/Grand-Jedi.jpg" alt="#">
+                        <img class="image-author" src="image/authors/Grand-Jedi.jpg" alt="master-yoda">
                     </div>
                 </div>
             </div>
@@ -984,7 +982,7 @@
                 <p class="name-author">Gandalf</p>
                 <p class="position-author">Mag</p>
                 <div class="image-block-author">
-                    <img class="image-author" src="image/authors/gandalf.jpg" alt="#">
+                    <img class="image-author" src="image/authors/gandalf.jpg" alt="gandalf">
                 </div>
             </div>
             <div class="authors-main-block hide-authors" data-people="sirius-black">
@@ -993,7 +991,7 @@
                 <p class="position-author">Harry Potter's godfather</p>
                 <div class="border-circle">
                     <div class="image-block-author">
-                        <img class="image-author" src="image/authors/sirius-black.jpg" alt="#">
+                        <img class="image-author" src="image/authors/sirius-black.jpg" alt="sirius-black">
                     </div>
                 </div>
             </div>
@@ -1001,20 +999,22 @@
                 <div class="square left">
                     <i class="fas fa-angle-left fa-angle"></i>
                 </div>
-                <div class="mini-circle-photo mini-circle-border" data-people="armstrong">
-                    <img class="image-author" src="image/authors/nil_armstrong.jpg" alt="#">
-                </div>
-                <div class="mini-circle-photo" data-people="jackie-chan">
-                    <img class="image-author" src="image/authors/jackie-chan.jpg" alt="#">
-                </div>
-                <div class="mini-circle-photo" data-people="master-yoda">
-                    <img class="image-author" src="image/authors/Grand-Jedi.jpg" alt="#">
-                </div>
-                <div class="mini-circle-photo hide-authors-mini" data-people="gandalf">
-                    <img class="image-author" src="image/authors/gandalf.jpg" alt="#">
-                </div>
-                <div class="mini-circle-photo hide-authors-mini" data-people="sirius-black">
-                    <img class="image-author" src="image/authors/sirius-black.jpg" alt="#">
+                <div class="karusel">
+                    <div class="mini-circle-photo mini-circle-border" data-people="armstrong">
+                        <img class="image-author" src="image/authors/nil_armstrong.jpg" alt="armstrong">
+                    </div>
+                    <div class="mini-circle-photo" data-people="jackie-chan">
+                        <img class="image-author" src="image/authors/jackie-chan.jpg" alt="jackie-chan">
+                    </div>
+                    <div class="mini-circle-photo" data-people="master-yoda">
+                        <img class="image-author" src="image/authors/Grand-Jedi.jpg" alt="master-yoda">
+                    </div>
+                    <div class="mini-circle-photo" data-people="gandalf">
+                        <img class="image-author" src="image/authors/gandalf.jpg" alt="gandalf">
+                    </div>
+                    <div class="mini-circle-photo hide-authors-mini" data-people="sirius-black">
+                        <img class="image-author" src="image/authors/sirius-black.jpg" alt="sirius-black">
+                    </div>
                 </div>
                 <div class="square right">
                     <i class="fas fa-angle-right fa-angle"></i>
@@ -1032,7 +1032,7 @@
         <div class="grid-sizer"></div>
         <div class="gutter-sizer"></div>
         <div class="grid-item">
-            <img src="image/gallery photo/1.png" alt="#">
+            <img src="image/gallery photo/1.png" alt="architect">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1043,7 +1043,7 @@
             </div>
         </div>
         <div class="grid-item">
-            <img src="image/gallery photo/2.png" alt="#">
+            <img src="image/gallery photo/2.png" alt="architect">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1054,7 +1054,7 @@
             </div>
         </div>
         <div class="grid-item hide-best-image">
-            <img src="image/authors/gandalf.jpg" alt="#">
+            <img src="image/authors/gandalf.jpg" alt="gandalf">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1065,7 +1065,18 @@
             </div>
         </div>
         <div class="grid-item hide-best-image">
-            <img src="image/authors/Grand-Jedi.jpg" alt="#">
+            <img src="image/authors/Grand-Jedi.jpg" alt="jedi">
+            <div class="hover-grid-item">
+                <div class="search-expand-square">
+                    <i class="fa fa-search fa-search-circle"></i>
+                </div>
+                <div class="search-expand-square">
+                    <i class="fas fa-arrows-alt fa-arrows-alt-personal"></i>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item ">
+            <img src="image/gallery photo/4.png" alt="architect">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1076,7 +1087,7 @@
             </div>
         </div>
         <div class="grid-item">
-            <img src="image/gallery photo/4.png" alt="#">
+            <img src="image/gallery photo/5.png" alt="architect">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1087,7 +1098,7 @@
             </div>
         </div>
         <div class="grid-item">
-            <img src="image/gallery photo/5.png" alt="#">
+            <img src="image/gallery photo/6.png" alt="architect">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1098,7 +1109,7 @@
             </div>
         </div>
         <div class="grid-item">
-            <img src="image/gallery photo/6.png" alt="#">
+            <img src="image/gallery photo/7.png" alt="architect">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1109,7 +1120,7 @@
             </div>
         </div>
         <div class="grid-item hide-best-image">
-            <img src="image/gallery photo/7.png" alt="#">
+            <img src="image/gallery photo/8.png" alt="architect">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1120,7 +1131,7 @@
             </div>
         </div>
         <div class="grid-item hide-best-image">
-            <img src="image/gallery photo/8.png" alt="#">
+            <img src="image/gallery photo/8.png" alt="architect">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1131,7 +1142,7 @@
             </div>
         </div>
         <div class="grid-item hide-best-image">
-            <img src="image/gallery photo/8.png" alt="#">
+            <img src="image/gallery photo/1.png" alt="architect">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1142,7 +1153,7 @@
             </div>
         </div>
         <div class="grid-item hide-best-image">
-            <img src="image/gallery photo/1.png" alt="#">
+            <img src="image/gallery photo/2.png" alt="architect">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1153,7 +1164,7 @@
             </div>
         </div>
         <div class="grid-item hide-best-image">
-            <img src="image/gallery photo/2.png" alt="#">
+            <img src="image/gallery photo/4.png" alt="architect">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1164,7 +1175,7 @@
             </div>
         </div>
         <div class="grid-item hide-best-image">
-            <img src="image/gallery photo/4.png" alt="#">
+            <img src="image/turtles/turtles6.png" alt="turtles">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1175,7 +1186,7 @@
             </div>
         </div>
         <div class="grid-item hide-best-image">
-            <img src="image/turtles/turtles6.png" alt="#">
+            <img src="image/turtles/turtles5.jpg" alt="turtles">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1186,7 +1197,7 @@
             </div>
         </div>
         <div class="grid-item hide-best-image">
-            <img src="image/turtles/turtles5.jpg" alt="#">
+            <img src="image/turtles/turtles4.jpg" alt="turtles">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1197,7 +1208,7 @@
             </div>
         </div>
         <div class="grid-item hide-best-image">
-            <img src="image/turtles/turtles4.jpg" alt="#">
+            <img src="image/turtles/turtles3.jpg" alt="turtles">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1208,7 +1219,7 @@
             </div>
         </div>
         <div class="grid-item hide-best-image">
-            <img src="image/turtles/turtles3.jpg" alt="#">
+            <img src="image/turtles/turtles2.jpg" alt="turtles">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1219,7 +1230,7 @@
             </div>
         </div>
         <div class="grid-item hide-best-image">
-            <img src="image/turtles/turtles2.jpg" alt="#">
+            <img src="image/turtles/turtles1.jpg" alt="turtles">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1230,18 +1241,7 @@
             </div>
         </div>
         <div class="grid-item hide-best-image">
-            <img src="image/turtles/turtles1.jpg" alt="#">
-            <div class="hover-grid-item">
-                <div class="search-expand-square">
-                    <i class="fa fa-search fa-search-circle"></i>
-                </div>
-                <div class="search-expand-square">
-                    <i class="fas fa-arrows-alt fa-arrows-alt-personal"></i>
-                </div>
-            </div>
-        </div>
-        <div class="grid-item hide-best-image">
-            <img src="image/turtles/turtles7.jpeg" alt="#">
+            <img src="image/turtles/turtles7.jpeg" alt="turtles">
             <div class="hover-grid-item">
                 <div class="search-expand-square">
                     <i class="fa fa-search fa-search-circle"></i>
@@ -1263,7 +1263,7 @@
 <div class="footer">
     <div class="content-footer">
         <p class="copyright-rights">
-            <i class="fas fa-copyright fa-copy-footer"></i>Copyright 2015
+            &copy; Copyright 2015
         </p>
         <a href="#">
             <p class="logo-ham-footer">theHam</p>
@@ -1275,7 +1275,7 @@
 <!--SCRIPT-->
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/masonry.pkgd.js"></script>
-<!--<script src="js/mainJs.js"></script>-->
-<script src="js/mainJquery.js"></script>
+<script src="js/mainJs.js"></script>
+<!--<script src="js/mainJquery.js"></script>-->
 </body>
 </html>

@@ -2,11 +2,11 @@ a {
     text-decoration: none;
 }
 
-/*Main Title*/
-
-.list-style {
+menu {
     list-style-type: none;
 }
+
+/*Main Title*/
 
 .head-menu {
     background-image: url("../image/Sections background/section-1(header).jpg");
@@ -15,7 +15,7 @@ a {
     background-attachment: fixed;
 }
 
-.logo-ham {
+.menu-head-ham {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,7 +25,6 @@ a {
 .top-side-fon {
     display: flex;
     justify-content: center;
-    margin: 0 auto;
     background-color: rgba(73, 71, 63, 0.6);
     height: 120px;
     position: fixed;
@@ -108,7 +107,6 @@ a {
 
 .main-menu {
     display: flex;
-    flex-direction: row;
 }
 
 .menu-link {
@@ -116,7 +114,6 @@ a {
     color: #b8b8b8;
     font-size: 13px;
     font-weight: 700;
-    text-align: left;
     margin: 10px;
     text-transform: uppercase;
     position: relative;
@@ -149,7 +146,7 @@ a {
     font-size: 35px;
     font-weight: 700;
     text-transform: uppercase;
-    margin-top: 380px;
+    margin-top: 360px;
 }
 
 .word-theme-color {
@@ -182,14 +179,13 @@ a {
     margin-bottom: 244px;
 }
 
-.explore {
+.main-button {
     font-family: 'Montserrat', sans-serif;
     color: #ffffff;
     font-size: 13px;
     font-weight: 700;
     display: inline-block;
     border-radius: 4px;
-    background-color: #18cfab;
     width: 165px;
     height: 60px;
     text-align: center;
@@ -200,32 +196,22 @@ a {
     transition: all .3s;
 }
 
-.explore:hover {
+.button-header-green:hover {
     box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.4);
     background-color: #00a096;
     transform: translateY(-4px);
     transition: all .3s;
 }
 
-.purchase {
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #00cbf6;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: 700;
-    border: none;
-    width: 165px;
-    height: 60px;
-    box-shadow: 0 -4px rgba(255, 255, 255, 1);
-    text-transform: uppercase;
-    margin-left: 14px;
-    transition: all .3s;
+.button-header-green {
+    background-color: #18cfab;
 }
 
-.purchase:hover {
+.button-header-blue {
+    background-color: #00cbf6;
+}
+
+.button-header-blue:hover {
     box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.4);
     background-color: #1081d0;
     transform: translateY(-4px);
@@ -284,6 +270,34 @@ a {
     padding-top: 50px;
 }
 
+.div-image {
+    background-repeat: no-repeat;
+}
+
+.onclick {
+    background-image: url("../image/icons/onclick.png");
+    height: 97px;
+    width: 58px;
+}
+
+.diamond {
+    background-image: url("../image/icons/diamond.png");
+    height: 75px;
+    width: 93px;
+}
+
+.lamp {
+    background-image: url("../image/icons/lamp.png");
+    height: 96px;
+    width: 60px;
+}
+
+.device {
+    background-image: url("../image/icons/device.png");
+    height: 76px;
+    width: 99px;
+}
+
 /*Our Services*/
 
 .our-services {
@@ -294,7 +308,7 @@ a {
 }
 
 .services {
-    margin-top: 100px;
+    padding-top: 100px;
     font-family: 'Montserrat', sans-serif;
     color: #4e4e4e;
     font-size: 36px;
@@ -306,7 +320,7 @@ a {
     width: 76px;
     height: 1px;
     background-color: #18cfab;
-    top: 70px;
+    top: 170px;
     left: 70px;
     position: absolute;
 }
@@ -316,7 +330,7 @@ a {
     width: 76px;
     height: 1px;
     background-color: #18cfab;
-    top: 73px;
+    top: 173px;
     left: 80px;
     position: absolute;
 }
@@ -421,17 +435,16 @@ a {
 /*EVERYTHING IS READY*/
 
 .section-is-ready {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-family: 'Montserrat', sans-serif;
     background-image: url("../image/Sections background/section-2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
-
-.ready-background {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-blend-mode: multiply;
     background-color: rgba(0, 0, 0, 0.78);
 }
 
@@ -441,7 +454,7 @@ a {
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
-    margin-top: 127px;
+    padding-top: 127px;
 }
 
 .second-text-section-ready {
@@ -451,25 +464,13 @@ a {
     margin-top: 35px;
 }
 
-.purchase-button-section-ready {
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: 700;
-    display: inline-block;
-    border-radius: 4px;
+.button-is-ready {
     background-color: #18cfab;
-    width: 165px;
-    height: 60px;
-    text-align: center;
-    border: none;
-    box-shadow: 0 -4px rgba(255, 255, 255, 1);
-    text-transform: uppercase;
     margin-top: 80px;
     margin-bottom: 127px;
-    transition: all .3s;
 }
 
-.purchase-button-section-ready:hover {
+.button-is-ready:hover {
     box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.4);
     background-color: #00a096;
     transform: translateY(-4px);
@@ -490,7 +491,7 @@ a {
     width: 80px;
     height: 1px;
     background-color: #18cfab;
-    top: 70px;
+    top: 170px;
     left: 130px;
     position: absolute;
 }
@@ -500,7 +501,7 @@ a {
     width: 80px;
     height: 1px;
     background-color: #18cfab;
-    top: 73px;
+    top: 173px;
     left: 140px;
     position: absolute;
 }
@@ -679,7 +680,7 @@ a {
     width: 80px;
     height: 1px;
     background-color: #18cfab;
-    top: 70px;
+    top: 170px;
     left: 95px;
     position: absolute;
 }
@@ -689,13 +690,13 @@ a {
     width: 80px;
     height: 1px;
     background-color: #18cfab;
-    top: 73px;
+    top: 173px;
     left: 105px;
     position: absolute;
 }
 
 .breaking-news-lines {
-    margin-top: 80px;
+    padding-top: 80px;
 }
 
 .image-news {
@@ -742,7 +743,6 @@ a {
     color: #717171;
     font-size: 18px;
     font-weight: 700;
-    text-align: left;
 }
 
 .vertical-line:after {
@@ -754,7 +754,6 @@ a {
     left: 100px;
     position: absolute;
 }
-
 
 .link-section-note {
     font-family: 'Montserrat', sans-serif;
@@ -818,7 +817,7 @@ a {
 }
 
 .services-people-say {
-    margin-top: 100px;
+    padding-top: 100px;
     font-family: 'Montserrat', sans-serif;
     font-size: 36px;
     position: relative;
@@ -830,7 +829,7 @@ a {
     width: 80px;
     height: 1px;
     background-color: #18cfab;
-    top: 70px;
+    top: 170px;
     left: 250px;
     position: absolute;
 }
@@ -840,7 +839,7 @@ a {
     width: 80px;
     height: 1px;
     background-color: #18cfab;
-    top: 73px;
+    top: 173px;
     left: 260px;
     position: absolute;
 }
@@ -886,6 +885,7 @@ a {
     overflow: hidden;
     box-shadow: 0 0 0 5px rgba(31, 218, 181, 0.2);
     transition: all .3s;
+    margin: 0 20px;
 }
 
 .mini-circle-photo:hover {
@@ -912,7 +912,6 @@ a {
 }
 
 .image-author {
-    /*width: 100%;*/
     height: 100%;
 }
 
@@ -946,6 +945,10 @@ a {
     font-size: 13px;
 }
 
+.karusel {
+    display: flex;
+}
+
 /*Gallery Of Best Images*/
 
 .gallery-best-images {
@@ -960,7 +963,7 @@ a {
     font-size: 36px;
     position: relative;
     color: #4e4e4e;
-    margin-top: 100px;
+    padding-top: 100px;
 }
 
 .gallery-line::before {
@@ -968,7 +971,7 @@ a {
     width: 80px;
     height: 1px;
     background-color: #18cfab;
-    top: 70px;
+    top: 170px;
     left: 160px;
     position: absolute;
 }
@@ -978,16 +981,12 @@ a {
     width: 80px;
     height: 1px;
     background-color: #18cfab;
-    top: 73px;
+    top: 173px;
     left: 170px;
     position: absolute;
 }
 
 .grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: self-start;
     width: 1160px;
     margin-top: 106px;
 }
@@ -998,12 +997,17 @@ a {
     position: relative;
 }
 
+.grid-margin-bottom {
+    margin-bottom: 80px;
+}
+
 .gutter-sizer {
     width: 2%;
 }
 
 .grid-item img {
     width: 100%;
+    float: left;
 }
 
 .grid-sizer {
@@ -1014,7 +1018,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(56, 49, 57, 0.6);;
+    background-color: rgba(56, 49, 57, 0.6);
     width: 100%;
     position: absolute;
     opacity: 0;
@@ -1023,7 +1027,7 @@ a {
 
 .grid-item:hover .hover-grid-item {
     opacity: 1;
-    height: 98%;
+    height: 100%;
 }
 
 .search-expand-square {
@@ -1044,6 +1048,10 @@ a {
 .fa-arrows-alt-personal {
     font-size: 18px;
     color: white;
+}
+
+.grid-item--width2 {
+    width: 12%;
 }
 
 /*Footer*/
@@ -1084,11 +1092,7 @@ a {
     width: 1px;
     height: 14px;
     background-color: #aeaeae;
-    top: 6px;
-    left: 63px;
+    top: 2px;
+    left: 62px;
     position: absolute;
-}
-
-.fa-copy-footer {
-    margin-right: 5px;
 }
