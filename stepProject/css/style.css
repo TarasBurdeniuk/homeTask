@@ -35,7 +35,7 @@ menu {
 .fa-search-link {
     color: #b8b8b8;
     margin-left: 10px;
-    font-size: 30px;
+    font-size: 22px;
 }
 
 .fa-search-circle {
@@ -82,21 +82,18 @@ menu {
     position: absolute;
     width: 0;
     height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    left: 0;
 }
 
 .image-h:before {
     top: -20px;
-    left: 0;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
     border-bottom: 20px solid rgb(0, 208, 175);
 }
 
 .image-h:after {
     bottom: -20px;
-    left: 0;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
     border-top: 20px solid rgb(0, 208, 175);
 }
 
@@ -107,6 +104,7 @@ menu {
 
 .main-menu {
     display: flex;
+    align-items: center;
 }
 
 .menu-link {
@@ -880,12 +878,12 @@ menu {
 .mini-circle-photo {
     display: flex;
     justify-content: center;
-    border-radius: 100%;
-    width: 50px;
-    height: 50px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
     box-sizing: border-box;
     overflow: hidden;
-    box-shadow: 0 0 0 5px rgba(31, 218, 181, 0.2);
+    box-shadow: 0 0 0 4px rgba(31, 218, 181, 0.2);
     transition: all .3s;
     margin: 0 20px;
 }
@@ -934,7 +932,6 @@ menu {
     width: 30px;
     height: 30px;
     border: 1px solid rgb(188, 188, 188);
-    border-radius: 4px;
 }
 
 .square:hover {
