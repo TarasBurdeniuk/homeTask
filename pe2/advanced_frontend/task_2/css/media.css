@@ -130,6 +130,7 @@
     .menu img {
         display: inline-block;
         padding-right: 30px;
+        height: 83px;
     }
 
     .main-menu {
@@ -241,6 +242,7 @@
     .footer img {
         display: inline-block;
         padding-left: 30px;
+        height: 83px;
     }
 
     .best, .new-salads {
