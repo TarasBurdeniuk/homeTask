@@ -7,7 +7,6 @@ function Hamburger(size, stuffing) {
             throw new HamburgerException(`Invalid stuffing`);
         }
     } catch (e) {
-        console.log(`${e._name}: ${e._message}`);
         throw e;
     }
     this._size = size;
