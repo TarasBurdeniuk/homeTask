@@ -15,14 +15,15 @@
         width: 60px;
     }
 
-    .menu-nav {
+    .main-menu {
+        top: 59px;
         width: 240px;
     }
 
-    .menu-nav a {
+    .main-menu-li {
         height: 40px;
         font-size: 14px;
-        padding: 0 0 0 30px;
+        padding: 10px 0 0 30px;
     }
 
     .container {
@@ -125,17 +126,37 @@
 @media (min-width: 980px) {
     .menu {
         justify-content: space-between;
+        padding: 0 30px;
     }
 
-    .menu img {
+    .menu-image {
         display: inline-block;
-        padding-right: 30px;
         height: 83px;
+        margin: 5px 0;
     }
 
     .main-menu {
         display: flex;
-        padding: 45px 0;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        position: static;
+        background: none;
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+        width: 100%;
+    }
+
+    .main-menu-li {
+        font-family: 'Montserrat', sans-serif;
+        display: inline;
+        color: white;
+        height: 0;
+        border: none;
+        padding: 0;
+        margin-right: 30px;
+        font-size: 15px;
     }
 
     .nav {
@@ -187,6 +208,7 @@
     .pizza-logo {
         display: inline-block;
         padding-right: 30px;
+        height: 98px;
     }
 
     .second-menu {
@@ -239,7 +261,7 @@
         justify-content: space-between;
     }
 
-    .footer img {
+    .footer-image {
         display: inline-block;
         padding-left: 30px;
         height: 83px;
@@ -257,10 +279,14 @@
 }
 
 @media (min-width: 1200px) {
-   body {
-       width: 1200px;
-       margin: 0 auto;
-   }
+    .menu {
+        padding: 0 35px;
+    }
+
+    .main-section {
+        width: 1200px;
+        margin: 0 auto;
+    }
 
     .main-menu {
         padding-left: 15px;
@@ -278,10 +304,6 @@
         font-size: 38px;
         padding-top: 55px;
         padding-bottom: 380px;
-    }
-
-    .menu img {
-        padding-right: 35px;
     }
 
     .image {
@@ -353,7 +375,7 @@
         padding-top: 20px;
     }
 
-    .footer img {
+    .footer-image {
         padding-left: 40px;
     }
 
