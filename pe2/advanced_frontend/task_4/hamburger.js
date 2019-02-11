@@ -1,10 +1,10 @@
 class Hamburger {
     constructor(size, stuffing) {
         try {
-            if ((size !== Hamburger.SIZE_SMALL) && (size !== Hamburger.SIZE_LARGE)) {
+            if ((size.size !== Hamburger.SIZE_SMALL.size) && (size.size !== Hamburger.SIZE_LARGE.size)) {
                 throw new HamburgerException(`Invalid size`);
             }
-            if ((stuffing !== Hamburger.STUFFING_SALAD) && (stuffing !== Hamburger.STUFFING_POTATO) && (stuffing !== Hamburger.STUFFING_CHEESE)) {
+            if ((stuffing.name !== Hamburger.STUFFING_SALAD.name) && (stuffing.name !== Hamburger.STUFFING_POTATO.name) && (stuffing.name !== Hamburger.STUFFING_CHEESE.name)) {
                 throw new HamburgerException(`Invalid stuffing`);
             }
         } catch (e) {
@@ -20,24 +20,24 @@ class Hamburger {
                 throw new HamburgerException('Argument is not object');
             } else if (!topping) {
                 throw new HamburgerException(`Empty argument`);
-            } else if (Object.is(Hamburger.STUFFING_CHEESE, topping) || Object.is(Hamburger.STUFFING_POTATO, topping) || Object.is(Hamburger.STUFFING_SALAD, topping)) {
-                throw new HamburgerException(`Do not change stuffing of hamburger`);
-            } else if (Object.is(Hamburger.SIZE_SMALL, topping) || Object.is(Hamburger.SIZE_LARGE, topping)) {
-                throw new HamburgerException(`Do not change size of hamburger`);
+            } else if (Object.is(Hamburger.STUFFING_CHEESE.name, topping.name) || Object.is(Hamburger.STUFFING_POTATO.name, topping.name) || Object.is(Hamburger.STUFFING_SALAD.name, topping.name)) {
+                throw new HamburgerException(`Impossible to change stuffing of hamburger`);
+            } else if (Object.is(Hamburger.SIZE_SMALL.size, topping.size) || Object.is(Hamburger.SIZE_LARGE.size, topping.size)) {
+                throw new HamburgerException(`Impossible to change size of hamburger`);
             }
             for (let key in this) {
-                if (Object.is(this[key], topping)) {
-                    throw new HamburgerException(`Do not impossible to add more ${topping.name}`);
+                if (Object.is(this[key].name, topping.name)) {
+                    throw new HamburgerException(`Impossible to add more ${topping.name}`);
                 }
             }
         } catch (e) {
             throw e;
         }
-        if (Object.is(topping, Hamburger.TOPPING_SPICE)) {
-            this.TOPPING_SPICE = topping;
+        if (Object.is(topping.name, Hamburger.TOPPING_SPICE.name)) {
+            this._topping_spice = topping;
         }
-        if (Object.is(topping, Hamburger.TOPPING_MAYO)) {
-            this.TOPPING_MAYO = topping;
+        if (Object.is(topping.name, Hamburger.TOPPING_MAYO.name)) {
+            this._topping_mayo = topping;
         }
     }
 
@@ -47,17 +47,17 @@ class Hamburger {
                 throw new HamburgerException('Argument is not object');
             } else if (!topping) {
                 throw new HamburgerException(`Empty argument`);
-            } else if (Object.is(Hamburger.STUFFING_CHEESE, topping) || Object.is(Hamburger.STUFFING_POTATO, topping) || Object.is(Hamburger.STUFFING_SALAD, topping)) {
-                throw new HamburgerException(`Do not remove stuffing of hamburger`);
-            } else if (Object.is(Hamburger.SIZE_SMALL, topping) || Object.is(Hamburger.SIZE_LARGE, topping)) {
-                throw new HamburgerException(`Do not remove size of hamburger`);
+            } else if (Object.is(Hamburger.STUFFING_CHEESE.name, topping.name) || Object.is(Hamburger.STUFFING_POTATO.name, topping.name) || Object.is(Hamburger.STUFFING_SALAD.name, topping.name)) {
+                throw new HamburgerException(`Impossible to remove stuffing of hamburger`);
+            } else if (Object.is(Hamburger.SIZE_SMALL.size, topping.size) || Object.is(Hamburger.SIZE_LARGE.size, topping.size)) {
+                throw new HamburgerException(`Impossible to remove size of hamburger`);
             }
         } catch (e) {
             throw e;
         }
 
         for (let key in this) {
-            if (this[key] === topping) {
+            if (this[key].name === topping.name) {
                 delete this[key];
             }
         }
@@ -72,11 +72,11 @@ class Hamburger {
             throw e;
         }
         let toppings = [];
-        if (this.TOPPING_SPICE) {
-            toppings.push(this.TOPPING_SPICE);
+        if (this._topping_spice) {
+            toppings.push(this._topping_spice);
         }
-        if (this.TOPPING_MAYO) {
-            toppings.push(this.TOPPING_MAYO);
+        if (this._topping_mayo) {
+            toppings.push(this._topping_mayo);
         }
         return toppings;
     }
@@ -118,7 +118,7 @@ class Hamburger {
                 price += this[key].price;
             }
         }
-        return `Full price is ${price} tugriy`;
+        return `Full price is ${price} uah`;
     }
 
     calculateCalories() {
@@ -138,6 +138,62 @@ class Hamburger {
         }
         return `Full calories of your order is ${calories}`;
     }
+
+    static get SIZE_SMALL() {
+        return {
+            size: 'small',
+            price: 50,
+            cal: 20
+        };
+    };
+
+    static get SIZE_LARGE() {
+        return {
+            size: 'large',
+            price: 100,
+            cal: 40
+        }
+    };
+
+    static get STUFFING_CHEESE() {
+        return {
+            name: 'Cheese',
+            price: 10,
+            cal: 20
+        }
+    };
+
+    static get STUFFING_SALAD() {
+        return {
+            name: 'Salad',
+            price: 20,
+            cal: 5
+        }
+    };
+
+    static get STUFFING_POTATO() {
+        return {
+            name: 'Potato',
+            price: 15,
+            cal: 10
+        }
+    };
+
+    static get TOPPING_MAYO() {
+        return {
+            name: 'Mayo',
+            price: 20,
+            cal: 5
+        }
+    };
+
+    static get TOPPING_SPICE() {
+        return {
+            name: 'Spice',
+            price: 15,
+            cal: 0
+        }
+    };
 }
 
 class HamburgerException {
@@ -146,158 +202,7 @@ class HamburgerException {
     }
 }
 
-HamburgerException.SIZE_SMALL = {
-    size: 'small',
-    price: 50,
-    cal: 20
-};
-
-Hamburger.SIZE_SMALL = {
-    size: 'small',
-    price: 50,
-    cal: 20
-};
-
-Object.defineProperties(Hamburger.SIZE_SMALL, {
-    price: {
-        value: 50,
-        writable: false,
-    },
-    size: {
-        value: 'small',
-        writable: false,
-    },
-    cal: {
-        value: 20,
-        writable: false,
-    }
-});
-
-Hamburger.SIZE_LARGE = {
-    size: 'large',
-    price: 100,
-    cal: 40
-};
-
-Object.defineProperties(Hamburger.SIZE_LARGE, {
-    price: {
-        value: 100,
-        writable: false,
-    },
-    size: {
-        value: 'large',
-        writable: false,
-    },
-    cal: {
-        value: 40,
-        writable: false,
-    }
-});
-
-Hamburger.STUFFING_CHEESE = {
-    name: 'Cheese',
-    price: 10,
-    cal: 20
-};
-
-Object.defineProperties(Hamburger.STUFFING_CHEESE, {
-    price: {
-        value: 10,
-        writable: false,
-    },
-    name: {
-        value: 'Cheese',
-        writable: false,
-    },
-    cal: {
-        value: 20,
-        writable: false,
-    }
-});
-
-Hamburger.STUFFING_SALAD = {
-    name: 'Salad',
-    price: 20,
-    cal: 5
-};
-
-Object.defineProperties(Hamburger.STUFFING_SALAD, {
-    price: {
-        value: 20,
-        writable: false,
-    },
-    name: {
-        value: 'Salad',
-        writable: false,
-    },
-    cal: {
-        value: 5,
-        writable: false,
-    }
-});
-
-Hamburger.STUFFING_POTATO = {
-    name: 'Potato',
-    price: 15,
-    cal: 10
-};
-
-Object.defineProperties(Hamburger.STUFFING_POTATO, {
-    price: {
-        value: 15,
-        writable: false,
-    },
-    name: {
-        value: 'Potato',
-        writable: false,
-    },
-    cal: {
-        value: 10,
-        writable: false,
-    }
-});
-
-Hamburger.TOPPING_MAYO = {
-    name: 'Mayo',
-    price: 20,
-    cal: 5
-};
-
-Object.defineProperties(Hamburger.TOPPING_MAYO, {
-    price: {
-        value: 20,
-        writable: false,
-    },
-    name: {
-        value: 'Mayo',
-        writable: false,
-    },
-    cal: {
-        value: 5,
-        writable: false,
-    }
-});
-
-Hamburger.TOPPING_SPICE = {
-    name: 'Spice',
-    price: 15,
-    cal: 0
-};
-
-Object.defineProperties(Hamburger.TOPPING_SPICE, {
-    price: {
-        value: 15,
-        writable: false,
-    },
-    name: {
-        value: 'Spice',
-        writable: false,
-    },
-    cal: {
-        value: 0,
-        writable: false,
-    }
-});
+Object.freeze(Hamburger);
 
 let burger = new Hamburger(Hamburger.SIZE_LARGE, Hamburger.STUFFING_CHEESE);
 
@@ -305,14 +210,18 @@ let burger = new Hamburger(Hamburger.SIZE_LARGE, Hamburger.STUFFING_CHEESE);
 burger.addTopping(Hamburger.TOPPING_SPICE);
 // burger.addTopping(Hamburger.TOPPING_MAYO);
 burger.addTopping(Hamburger.TOPPING_MAYO);
-burger.removeTopping(Hamburger.TOPPING_MAYO);
+// burger.removeTopping(Hamburger.TOPPING_MAYO);
 // burger.removeTopping(Hamburger.TOPPING_SPICE);
 // burger.removeTopping(Hamburger.STUFFING_POTATO);
-console.log(burger.getToppings());
+Hamburger.newValue = `bug`;
+console.log(Hamburger.newValue);
+Hamburger.SIZE_SMALL.size = `not small`;
+console.log(Hamburger.SIZE_SMALL);
 console.log(burger);
 
-console.log(burger.getSize());
-console.log(burger.getStuffing());
-console.log(burger.calculatePrice());
-console.log(burger.calculateCalories());
-console.log(burger);
+// console.log(burger.getToppings());
+// console.log(burger.getSize());
+// console.log(burger.getStuffing());
+// console.log(burger.calculatePrice());
+// console.log(burger.calculateCalories());
+// console.log(burger);
