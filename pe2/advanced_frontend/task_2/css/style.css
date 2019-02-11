@@ -92,7 +92,7 @@
     height: 0;
 }
 
-.container {
+.bg-image-block {
     position: relative;
     color: white;
     padding: 20px 0 0 20px;
@@ -147,21 +147,19 @@
     align-items: center;
     height: 75px;
     margin-top: 2px;
+    position: relative;
 }
 
 .section-1 {
     background-image: url("../image/Pizza delivery fon.png");
-    cursor: pointer;
 }
 
 .section-2 {
     background-image: url("../image/UA_UX Salads fon.png");
-    cursor: pointer;
 }
 
 .section-3 {
     background-image: url("../image/Desserts fon.png");
-    cursor: pointer;
 }
 
 .image {
@@ -182,10 +180,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.5s;
+    opacity: 0;
     width: 70px;
     height: 100%;
     background: #acd8ad;
     cursor: pointer;
+}
+
+.menu-section:hover .block-in {
+    opacity: 1;
+    right: 0;
 }
 
 .move-right {
