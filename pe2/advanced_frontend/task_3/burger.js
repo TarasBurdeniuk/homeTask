@@ -23,41 +23,11 @@ Hamburger.SIZE_SMALL = {
     cal: 20
 };
 
-Object.defineProperties(Hamburger.SIZE_SMALL, {
-    price: {
-        value: 50,
-        writable: false,
-    },
-    size: {
-        value: 'small',
-        writable: false,
-    },
-    cal: {
-        value: 20,
-        writable: false,
-    }
-});
-
 Hamburger.SIZE_LARGE = {
     size: 'large',
     price: 100,
     cal: 40
 };
-
-Object.defineProperties(Hamburger.SIZE_LARGE, {
-    price: {
-        value: 100,
-        writable: false,
-    },
-    size: {
-        value: 'large',
-        writable: false,
-    },
-    cal: {
-        value: 40,
-        writable: false,
-    }
-});
 
 Hamburger.STUFFING_CHEESE = {
     name: 'Cheese',
@@ -65,41 +35,11 @@ Hamburger.STUFFING_CHEESE = {
     cal: 20
 };
 
-Object.defineProperties(Hamburger.STUFFING_CHEESE, {
-    price: {
-        value: 10,
-        writable: false,
-    },
-    name: {
-        value: 'Cheese',
-        writable: false,
-    },
-    cal: {
-        value: 20,
-        writable: false,
-    }
-});
-
 Hamburger.STUFFING_SALAD = {
     name: 'Salad',
     price: 20,
     cal: 5
 };
-
-Object.defineProperties(Hamburger.STUFFING_SALAD, {
-    price: {
-        value: 20,
-        writable: false,
-    },
-    name: {
-        value: 'Salad',
-        writable: false,
-    },
-    cal: {
-        value: 5,
-        writable: false,
-    }
-});
 
 Hamburger.STUFFING_POTATO = {
     name: 'Potato',
@@ -107,62 +47,17 @@ Hamburger.STUFFING_POTATO = {
     cal: 10
 };
 
-Object.defineProperties(Hamburger.STUFFING_POTATO, {
-    price: {
-        value: 15,
-        writable: false,
-    },
-    name: {
-        value: 'Potato',
-        writable: false,
-    },
-    cal: {
-        value: 10,
-        writable: false,
-    }
-});
-
 Hamburger.TOPPING_MAYO = {
     name: 'Mayo',
     price: 20,
     cal: 5
 };
 
-Object.defineProperties(Hamburger.TOPPING_MAYO, {
-    price: {
-        value: 20,
-        writable: false,
-    },
-    name: {
-        value: 'Mayo',
-        writable: false,
-    },
-    cal: {
-        value: 5,
-        writable: false,
-    }
-});
-
 Hamburger.TOPPING_SPICE = {
     name: 'Spice',
     price: 15,
     cal: 0
 };
-
-Object.defineProperties(Hamburger.TOPPING_SPICE, {
-    price: {
-        value: 15,
-        writable: false,
-    },
-    name: {
-        value: 'Spice',
-        writable: false,
-    },
-    cal: {
-        value: 0,
-        writable: false,
-    }
-});
 
 Hamburger.prototype.addTopping = function (topping) {
     try {
@@ -288,6 +183,11 @@ Hamburger.prototype.calculateCalories = function () {
     return 'Full calories of your order is ' + calories;
 };
 
+for (var key in Hamburger) {
+    Object.freeze(Hamburger[key]);
+}
+
+Object.freeze(Hamburger);
 
 var burger = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
 
@@ -298,12 +198,15 @@ burger.addTopping(Hamburger.TOPPING_MAYO);
 // burger.removeTopping(Hamburger.TOPPING_MAYO);
 // burger.removeTopping(Hamburger.TOPPING_SPICE);
 // burger.removeTopping(Hamburger.STUFFING_POTATO);
-// console.log(burger.getToppings());
+Hamburger.big = 'big';
+Hamburger.SIZE_SMALL.size = 'very small';
+console.log(Hamburger.SIZE_SMALL.size);
 console.log(burger);
+// console.log(Hamburger);
 
+// console.log(burger.getToppings());
 // console.log(burger.getSize());
 // console.log(burger.getStuffing());
 // console.log(burger.calculatePrice());
 // console.log(burger.calculateCalories());
 // console.dir(Hamburger);
-
