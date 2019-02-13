@@ -18,15 +18,11 @@ for (let i = 0; i < 30; i++) {
 }
 
 function addBack(event) {
-    console.log(event.target);
     if (event.target === body) {
-        const table = document.getElementsByTagName('table');
-        table[0].classList.toggle('blackBack');
+        table.classList.toggle('blackBack');
     } else {
         event.target.classList.toggle('blackBack');
     }
 }
 
 body.addEventListener('click', addBack);
-
-
