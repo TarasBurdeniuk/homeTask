@@ -281,11 +281,7 @@
 @media (min-width: 1200px) {
     .menu {
         padding: 0 35px;
-    }
-
-    .main-section {
         width: 1200px;
-        margin: 0 auto;
     }
 
     .main-menu {
@@ -297,7 +293,17 @@
         font-size: 62px;
         line-height: 80px;
         padding: 60px 0 0 35px;
+        width: 1200px;
+    }
 
+    .bg-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .background {
+        display: flex;
+        justify-content: center;
     }
 
     .email-title {
@@ -313,6 +319,11 @@
 
     .main {
         margin-top: 6px;
+        width: 1200px;
+    }
+
+    .main-block {
+        display: flex;justify-content: center;
     }
 
     .menu-section {
@@ -321,6 +332,13 @@
 
     .second-menu {
         padding-top: 40px;
+        width: 1200px;
+    }
+
+    .second-menu-block {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 90px;
     }
 
     .menu-head {
@@ -333,6 +351,16 @@
 
     .second-title {
         font-size: 13px;
+    }
+
+    .footer {
+        width: 1200px;
+        margin-top: 0;
+    }
+
+    .footer-block {
+        display: flex;
+        justify-content: center;
     }
 
     .title-menu {
