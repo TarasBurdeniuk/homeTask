@@ -1,0 +1,30 @@
+.main-block {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+table {
+    background: black;
+}
+
+td {
+    width: 30px;
+    height: 30px;
+}
+
+table td {
+    background: white;
+}
+
+td.blackBack {
+    background: black;
+}
+
+table.blackBack td {
+    background: black;
+}
+
+table.blackBack td.blackBack {
+    background: white;
+}
