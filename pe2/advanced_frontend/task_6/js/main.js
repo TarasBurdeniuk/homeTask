@@ -1,9 +1,9 @@
 const table = document.getElementsByTagName('table')[0];
 
-for (let i = 1; i <= 50; i++) {
+for (let i = 1; i <= 30; i++) {
     const tr = document.createElement('tr');
     table.appendChild(tr);
-    for (let j = 1; j <= 100; j++) {
+    for (let j = 1; j <= 30; j++) {
         const td = document.createElement('td');
         td.setAttribute('data-x', `${j}`);
         td.setAttribute('data-y', `${i}`);

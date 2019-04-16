@@ -17,12 +17,12 @@ td {
 
 .tank-blue {
     background-color: royalblue;
-    border-radius: 50px;
+    border-radius: 10px;
 }
 
 .tank-orange {
     background-color: orangered;
-    border-radius: 50px;
+    border-radius: 10px;
 }
 
 .bullet {

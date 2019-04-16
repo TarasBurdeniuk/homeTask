@@ -346,21 +346,35 @@ Tank.prototype.generateCoordDownElse = function (curPos) {
 
 Tank.prototype.changePosition = function () {
     const position = ['front', 'left', 'right', 'down'];
-    this.position = position[Math.floor(Math.random() * (4 + 1 - 1))];
+    this.position = position[Math.floor(Math.random() * 4)];
     this.enemyMove();
 };
 
 Tank.prototype.shot = function (curPos) {
     let posTank = curPos;
-
-    const cX = posTank[2].dataset.x,
+    let cX = posTank[2].dataset.x,
         cY = posTank[2].dataset.y;
 
-    const bullet = setInterval(function () {
-        if (this.position === 'front') {
 
-        }
-            }, 200);
+    if (this.position === 'front') {
+        // bullet.classList.remove('bullet');
+        // let lastBullet = null;
+
+        const letGo = setInterval(function () {
+            let bullet = document.querySelector('[data-x = "' + (+cX) + '"][data-y = "' + (+cY - 2) + '"]');
+// let q = bullet;
+            bullet.classList.toggle('bullet');
+            bullet.dataset.busy = 'bullet';
+            bullet = document.querySelector('[data-x = "' + (+cX) + '"][data-y = "' + (+cY-- - 3) + '"]');
+            bullet.classList.toggle('bullet');
+            bullet.dataset.busy = '';
+        }, 200);
+    }
+}
+;
+
+Tank.prototype.averTime = function () {
+    return Math.floor(Math.random() * 4000);
 };
 
 Tank.prototype.enemyMove = function () {
@@ -377,7 +391,7 @@ Tank.prototype.enemyMove = function () {
         setTimeout(function () {
             th.changePosition();
             clearInterval(move);
-        }, 3000);
+        }, this.averTime());
     } else if (this.position === 'left') {
         let move = setInterval(function () {
             th.moveLeft(th.currentCoordinates);
@@ -385,7 +399,7 @@ Tank.prototype.enemyMove = function () {
         setTimeout(function () {
             th.changePosition();
             clearInterval(move);
-        }, 3000);
+        }, this.averTime());
     } else if (this.position === 'right') {
         let move = setInterval(function () {
             th.moveRight(th.currentCoordinates);
@@ -393,7 +407,7 @@ Tank.prototype.enemyMove = function () {
         setTimeout(function () {
             th.changePosition();
             clearInterval(move);
-        }, 3000);
+        }, this.averTime());
     } else if (this.position === 'down') {
         let move = setInterval(function () {
             th.moveDown(th.currentCoordinates);
@@ -401,7 +415,7 @@ Tank.prototype.enemyMove = function () {
         setTimeout(function () {
             th.changePosition();
             clearInterval(move);
-        }, 3000);
+        }, this.averTime());
     }
     console.timeEnd('enemyMove');
 };
@@ -412,13 +426,11 @@ Tank.prototype.start = function () {
 
 let patton = new Tank('front', 'tank-orange');
 
-patton.createAllies(5, 20);
-// console.log(patton);
+patton.createAllies(16, 20);
 
 let panzervagen = new Tank('down', 'tank-blue');
 
 panzervagen.generateTank(10, 3);
-// console.log(panzervagen);
 
 let mouse = new Tank('down', 'tank-blue');
 mouse.generateTank(10, 20);
@@ -426,15 +438,11 @@ mouse.generateTank(10, 20);
 let tiger = new Tank('down', 'tank-blue');
 tiger.generateTank(5, 12);
 
-tiger.start();
-panzervagen.start();
-mouse.start();
-
+// tiger.start();
+// panzervagen.start();
+// mouse.start();
 
 document.addEventListener('keydown', function (e) {
-    // if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown' && e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') {
-    //     return;
-    // }
     if (e.which === 38) {
         patton.moveFront(patton.currentCoordinates);
     } else if (e.which === 37) {
@@ -443,6 +451,8 @@ document.addEventListener('keydown', function (e) {
         patton.moveRight(patton.currentCoordinates);
     } else if (e.which === 40) {
         patton.moveDown(patton.currentCoordinates);
+    } else if (e.which === 32) {
+        patton.shot(patton.currentCoordinates);
     }
 });
 
